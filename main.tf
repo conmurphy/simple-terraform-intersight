@@ -7,6 +7,12 @@ terraform {
   }
 }
 
+provider "intersight" {
+  apikey    = var.API_KEY
+  secretkey = var.SECRET_KEY
+  endpoint = "https://intersight.com"
+}
+
 variable "API_KEY" {
 }
 
@@ -14,12 +20,6 @@ variable "SECRET_KEY" {
 }
 
 variable "organization" {
-}
-
-provider "intersight" {
-  apikey    = var.API_KEY
-  secretkey = var.SECRET_KEY
-  endpoint = "https://intersight.com"
 }
 
 resource "intersight_fabric_port_policy" "fabric_port_policy1" {
